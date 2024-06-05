@@ -1,9 +1,12 @@
 #include "../inc/FastImagConvolutioin.hpp"
 #include <emmintrin.h>
 // kernel for edge detection
-//extern int kernel_x;
-//extern int kernel_y;
-//extern float kernel[];
+int kernel_x = 3;
+int kernel_y = 3;
+
+float kernel[] = { -1, -1, -1,
+				   -1, 8, -1,
+				   -1, -1, -1 };
 
 void generate_kernel() {
 	srand(time(NULL));

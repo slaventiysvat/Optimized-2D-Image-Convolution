@@ -23,14 +23,14 @@ extern float kernel[KERNX*KERNY];
 */
 
 // kernel for edge detection
-int kernel_x = 3, kernel_y = 3;
+extern int kernel_x;
+extern int kernel_y;
 
-float kernel[] = { -1, -1, -1,
-                   -1, 8, -1,
-                   -1, -1, -1 };
-//int kernel_x = 3, kernel_y = 3;
+extern float kernel[9];
 
-int minimum = 400, maximum = 1201, step = 200;
+extern int minimum;
+extern int maximum;
+extern int step;
 
 void generate_kernel();
 

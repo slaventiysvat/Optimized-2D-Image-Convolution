@@ -35,16 +35,9 @@ int gettimeofday(struct timeval* tp, struct timezone* tzp)
     return 0;
 }
 
-// kernel for edge detection
-//extern int kernel_x;
-//extern int kernel_y;
-//extern float kernel[];
-
-//int kernel_x = 3, kernel_y = 3;
-
-//extern int minimum;
-//extern int maximum;
-//extern int step;
+int minimum = 400;
+int maximum = 1201;
+int step = 200;
 
 static int SIZE_DIM;
 
@@ -78,7 +71,7 @@ int main( int argc, char ** argv ) {
     repeat = 1;
 
     //FILE* file_in = fopen(argv[1], "rb");
-    FILE* file_in = fopen("./Images/image0.bmp", "rb");
+    FILE* file_in = fopen("./../../../Images/image0.bmp", "rb");
     int check = fread(info, sizeof(unsigned char), 54, file_in); // Read the 54-byte info header
     color_table_size = *((int*)(info + 0x0a))- 54;
     color_table = (unsigned char *) malloc(sizeof(unsigned char) * color_table_size);
